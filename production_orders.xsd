@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-<!-- Begin of group definitions -->
+    <!-- Begin of group definitions -->
     <xs:group name="position">
         <xs:sequence>
             <xs:element name="position" maxOccurs="unbounded">
@@ -61,33 +61,33 @@
         </xs:sequence>
     </xs:group>
 
-<!-- End of group definitions -->
-<!-- ================================= -->
-    <xs:element name="orders">
-        <xs:complexType>
-            <xs:all>
-                <xs:element name="order">
-                    <xs:complexType>
-                        <xs:all>
-                            <xs:element name="customer">
-                                <xs:complexType>
-                                    <xs:attribute name="name" use="required" />
-                                    <xs:attribute name="shortname" use="required" />
-                                    <xs:attribute name="id" type="xs:integer" use="required" />
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="positions">
-                                <xs:complexType>
-                                    <xs:group ref="position" />
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:all>
-                        <xs:attribute name="number" type="xs:integer" use="required" />
-                        <xs:attribute name="id" type="xs:integer" use="required" />
-                    </xs:complexType>
-                </xs:element>
-            </xs:all>
-            <xs:attribute name="list" type="xs:integer" use="required" />
-        </xs:complexType>
-    </xs:element>
+    <!-- End of group definitions -->
+    <!-- ================================= -->
+        <xs:element name="orders" >
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="order" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:all>
+                                <xs:element name="customer">
+                                    <xs:complexType>
+                                        <xs:attribute name="name" use="required" />
+                                        <xs:attribute name="shortname" use="required" />
+                                        <xs:attribute name="id" type="xs:integer" use="required" />
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="positions">
+                                    <xs:complexType>
+                                        <xs:group ref="position" />
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:all>
+                            <xs:attribute name="number" type="xs:integer" use="required" />
+                            <xs:attribute name="id" type="xs:integer" use="required" />
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="list" type="xs:integer" use="required" />
+            </xs:complexType>
+        </xs:element>
 </xs:schema>
