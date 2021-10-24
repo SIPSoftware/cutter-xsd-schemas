@@ -69,7 +69,12 @@
             <xs:sequence>
                 <xs:element name="order" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:all>
+                        <xs:sequence>
+                            <xs:element name="positions">
+                                <xs:complexType>
+                                    <xs:group ref="position" />
+                                </xs:complexType>
+                            </xs:element>
                             <xs:element name="customer">
                                 <xs:complexType>
                                     <xs:attribute name="name" use="required" />
@@ -77,17 +82,12 @@
                                     <xs:attribute name="id" type="xs:integer" use="required" />
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="positions">
-                                <xs:complexType>
-                                    <xs:group ref="position" />
-                                </xs:complexType>
-                            </xs:element>
                             <xs:element name="additional_info" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="type" type="xs:integer" use="required" />
                                 </xs:complexType>
                             </xs:element>
-                        </xs:all>
+                        </xs:sequence>
                         <xs:attribute name="number" type="xs:integer" use="required" />
                         <xs:attribute name="id" type="xs:integer" use="required" />
                     </xs:complexType>
