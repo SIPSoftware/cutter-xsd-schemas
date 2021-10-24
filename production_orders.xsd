@@ -14,7 +14,7 @@
                                 <xs:attribute name="id" type="xs:integer" />
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="additional_info">
+                        <xs:element name="additional_info" maxOccurs="unbounded">
                             <xs:complexType>
                                 <xs:attribute name="type" type="xs:integer" use="required" />
                             </xs:complexType>
@@ -82,7 +82,7 @@
                                     <xs:group ref="position" />
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="additional_info">
+                            <xs:element name="additional_info" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="type" type="xs:integer" use="required" />
                                 </xs:complexType>
