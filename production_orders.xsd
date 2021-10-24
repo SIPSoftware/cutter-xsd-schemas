@@ -17,7 +17,7 @@
                         <xs:element name="additional_info" maxOccurs="unbounded">
                             <xs:complexType>
                                 <xs:attribute name="type" type="xs:integer" use="required" />
-                                <xs:attribute name="value" type="xs:integer" use="required" />
+                                <xs:attribute name="value" type="xs:string" use="required" />
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
@@ -86,7 +86,7 @@
                             <xs:element name="additional_info" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="type" type="xs:integer" use="required" />
-                                    <xs:attribute name="value" type="xs:integer" use="required" />
+                                    <xs:attribute name="value" type="xs:string" use="required" />
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
