@@ -6,23 +6,24 @@
         <xs:sequence>
             <xs:element name="position" maxOccurs="unbounded">
                 <xs:complexType>
-                    <xs:group ref="product" />
+                    <xs:sequence>
+                        <xs:element name="product">
+                            <xs:complexType>
+                                <xs:group ref="layer" />
+                                <xs:attribute name="code" />
+                                <xs:attribute name="id" type="xs:integer" />
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="additional_info">
+                            <xs:complexType>
+                                <xs:attribute name="type" type="xs:integer" use="required" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
                     <xs:attribute name="id" type="xs:integer" use="required" />
                     <xs:attribute name="description" use="required" />
                     <xs:attribute name="width" type="xs:integer" use="required" />
                     <xs:attribute name="height" type="xs:integer" use="required" />
-                </xs:complexType>
-            </xs:element>
-        </xs:sequence>
-    </xs:group>
-
-    <xs:group name="product">
-        <xs:sequence>
-            <xs:element name="product">
-                <xs:complexType>
-                    <xs:group ref="layer" />
-                    <xs:attribute name="code" />
-                    <xs:attribute name="id" type="xs:integer" />
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
@@ -63,31 +64,36 @@
 
     <!-- End of group definitions -->
     <!-- ================================= -->
-        <xs:element name="orders" >
-            <xs:complexType>
-                <xs:sequence>
-                    <xs:element name="order" maxOccurs="unbounded">
-                        <xs:complexType>
-                            <xs:all>
-                                <xs:element name="customer">
-                                    <xs:complexType>
-                                        <xs:attribute name="name" use="required" />
-                                        <xs:attribute name="shortname" use="required" />
-                                        <xs:attribute name="id" type="xs:integer" use="required" />
-                                    </xs:complexType>
-                                </xs:element>
-                                <xs:element name="positions">
-                                    <xs:complexType>
-                                        <xs:group ref="position" />
-                                    </xs:complexType>
-                                </xs:element>
-                            </xs:all>
-                            <xs:attribute name="number" type="xs:integer" use="required" />
-                            <xs:attribute name="id" type="xs:integer" use="required" />
-                        </xs:complexType>
-                    </xs:element>
-                </xs:sequence>
-                <xs:attribute name="list" type="xs:integer" use="required" />
-            </xs:complexType>
-        </xs:element>
+    <xs:element name="orders">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="order" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="customer">
+                                <xs:complexType>
+                                    <xs:attribute name="name" use="required" />
+                                    <xs:attribute name="shortname" use="required" />
+                                    <xs:attribute name="id" type="xs:integer" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="positions">
+                                <xs:complexType>
+                                    <xs:group ref="position" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="additional_info">
+                                <xs:complexType>
+                                    <xs:attribute name="type" type="xs:integer" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:all>
+                        <xs:attribute name="number" type="xs:integer" use="required" />
+                        <xs:attribute name="id" type="xs:integer" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="list" type="xs:integer" use="required" />
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
