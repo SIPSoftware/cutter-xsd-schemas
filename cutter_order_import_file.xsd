@@ -68,6 +68,8 @@
     <xs:element name="cutterImportOrderFile">
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="original_filename">
+                </xs:element>
                 <xs:element name="order" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
@@ -95,8 +97,8 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attribute name="format_version" type="xs:float" />
-            <xs:attribute name="script_version" type="xs:float" />
+            <xs:attribute name="format_version" type="xs:string" />
+            <xs:attribute name="script_version" type="xs:string" />
             <xs:attribute name="script" type="xs:string" />
         </xs:complexType>
     </xs:element>
