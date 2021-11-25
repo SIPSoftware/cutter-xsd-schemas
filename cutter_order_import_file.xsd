@@ -73,27 +73,25 @@
                 <xs:element name="order" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="positions">
-                                <xs:complexType>
-                                    <xs:group ref="position" />
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="customer">
-                                <xs:complexType>
-                                    <xs:attribute name="name" use="required" />
-                                    <xs:attribute name="shortname" use="required" />
-                                    <xs:attribute name="id" type="xs:integer" use="required" />
-                                </xs:complexType>
-                            </xs:element>
                             <xs:element name="additional_info" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="type" type="xs:integer" use="required" />
-                                    <xs:attribute name="value" type="xs:string" use="required" />
+                                    <xs:attribute name="comment" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
+                            <xs:element name="delivery"/>
+                            <xs:element name="customer_name"/>
+                            <xs:element name="numberByCustomer"/>
+                            <xs:element name="order_date"/>
+                            <xs:element name="notes"/>
+                            <xs:element name="internal_number"/>
+                            <xs:element name="end_user_name2"/>
+                            <xs:element name="delivery_date"/>
+                            <xs:element name="customer_date"/>
+                            <xs:group ref="position">
+                            </xs:group>
                         </xs:sequence>
-                        <xs:attribute name="number" type="xs:integer" use="required" />
-                        <xs:attribute name="id" type="xs:integer" use="required" />
+                        <xs:attribute name="comment" type="xs:string"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
