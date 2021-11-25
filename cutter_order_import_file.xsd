@@ -10,7 +10,12 @@
                         <xs:element name="width" />
                         <xs:element name="height" />
                         <xs:element name="quantity" />
-                        <xs:element name="structure_name" />
+                        <xs:element name="structure_name">
+                            <xs:annotation>
+                                <xs:appinfo>Obecnie nieużywane</xs:appinfo>
+                                <xs:documentation>Dokumentacja: obecnie nie uzywane </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                         <xs:element name="structure_code" />
                         <xs:element name="structure_code2" minOccurs="0" />
                         <xs:element name="product" minOccurs="0">
