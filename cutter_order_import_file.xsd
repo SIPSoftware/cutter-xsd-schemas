@@ -10,9 +10,9 @@
                         <xs:element name="width" />
                         <xs:element name="height" />
                         <xs:element name="quantity" />
-                        <xs:element name="structureName" />
-                        <xs:element name="structureCode" />
-                        <xs:element name="structureCode2" minOccurs="0" />
+                        <xs:element name="structure_name" />
+                        <xs:element name="structure_code" />
+                        <xs:element name="structure_code2" minOccurs="0" />
                         <xs:element name="product" minOccurs="0">
                             <xs:complexType>
                                 <xs:sequence>
@@ -53,7 +53,7 @@
                         <xs:element name="key" minOccurs="0" />
                         <xs:element name="additional_description" minOccurs="0" />
                         <xs:group ref="custom_glazing_bar" />
-                        <xs:element name="additionalInfo" minOccurs="0" maxOccurs="unbounded">
+                        <xs:element name="additional_info" minOccurs="0" maxOccurs="unbounded">
                             <xs:complexType mixed="true">
                                 <xs:attribute name="type" type="xs:integer" use="required" />
                                 <xs:attribute name="comment" type="xs:string" />
@@ -157,14 +157,14 @@
 
     <!-- End of group definitions -->
     <!-- ================================= -->
-    <xs:element name="cutterImportOrderFile">
+    <xs:element name="cutter_import_order_file">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="original_filename" />
                 <xs:element name="order" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="additionalInfo" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="additional_info" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType mixed="true">
                                     <xs:attribute name="type" type="xs:integer" use="required" />
                                     <xs:attribute name="comment" type="xs:string" />
@@ -172,7 +172,7 @@
                             </xs:element>
                             <xs:element name="delivery" />
                             <xs:element name="customer_name" />
-                            <xs:element name="numberByCustomer" />
+                            <xs:element name="number_by_customer" />
                             <xs:element name="order_date" />
                             <xs:element name="notes" />
                             <xs:element name="internal_number" />
