@@ -4,57 +4,149 @@
     <!-- Begin of group definitions -->
     <xs:group name="position">
         <xs:sequence>
-            <xs:element name="position" maxOccurs="unbounded">
+            <xs:element name="position">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="product">
+                        <xs:element name="width" />
+                        <xs:element name="height" />
+                        <xs:element name="quantity" />
+                        <xs:element name="structureName" />
+                        <xs:element name="structureCode" />
+                        <xs:element name="structureCode2" minOccurs="0" />
+                        <xs:element name="product" minOccurs="0">
                             <xs:complexType>
-                                <xs:group ref="layer" />
-                                <xs:attribute name="code" />
-                                <xs:attribute name="id" type="xs:integer" />
+                                <xs:sequence>
+                                    <xs:element name="glass1" />
+                                    <xs:element name="spacer1" minOccurs="0">
+                                        <xs:complexType mixed="true">
+                                            <xs:attribute name="thickness" type="xs:float" use="required" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="gas1" minOccurs="0" />
+                                    <xs:element name="glass2" minOccurs="0" />
+                                    <xs:element name="spacer2" minOccurs="0">
+                                        <xs:complexType mixed="true">
+                                            <xs:attribute name="thickness" type="xs:float" use="required" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="gas2" minOccurs="0" />
+                                    <xs:element name="glass3" minOccurs="0" />
+                                    <xs:element name="spacer3" minOccurs="0">
+                                        <xs:complexType mixed="true">
+                                            <xs:attribute name="thickness" type="xs:float"/>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="gas3" minOccurs="0" />
+                                    <xs:element name="glass4" minOccurs="0" />
+                                    <xs:element name="spacer4" minOccurs="0">
+                                        <xs:complexType mixed="true">
+                                            <xs:attribute name="thickness" type="xs:float" use="required" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="gas4" minOccurs="0" />
+                                    <xs:element name="glass5" minOccurs="0" />
+                                </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="additional_info" maxOccurs="unbounded">
-                            <xs:complexType>
+                        <xs:element name="description" minOccurs="0" />
+                        <xs:element name="delivery_date" minOccurs="0" />
+                        <xs:element name="key" minOccurs="0" />
+                        <xs:element name="additional_description" minOccurs="0" />
+                        <xs:group ref="custom_glazing_bar" />
+                        <xs:element name="additionalInfo" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType mixed="true">
                                 <xs:attribute name="type" type="xs:integer" use="required" />
-                                <xs:attribute name="value" type="xs:string" use="required" />
+                                <xs:attribute name="comment" type="xs:string" />
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
-                    <xs:attribute name="id" type="xs:integer" use="required" />
-                    <xs:attribute name="description" use="required" />
-                    <xs:attribute name="width" type="xs:integer" use="required" />
-                    <xs:attribute name="height" type="xs:integer" use="required" />
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
     </xs:group>
 
-    <xs:group name="layer">
+    <xs:group name="custom_glazing_bar">
         <xs:sequence>
-            <xs:element name="layer" maxOccurs="unbounded">
-                <xs:complexType>
-                    <xs:group ref="glazing_bar" minOccurs="0" />
-                    <xs:attribute name="id" type="xs:integer" />
-                    <xs:attribute name="type" />
-                    <xs:attribute name="material" />
-                    <xs:attribute name="width" type="xs:integer" />
-                    <xs:attribute name="height" type="xs:integer" />
-                </xs:complexType>
-            </xs:element>
-        </xs:sequence>
-    </xs:group>
-
-    <xs:group name="glazing_bar">
-        <xs:sequence>
-            <xs:element name="glazing_bar">
+            <xs:element name="custom_glazing_bar" minOccurs="0">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="bar" maxOccurs="unbounded">
-                            <xs:complexType>
-                                <xs:attribute name="material" />
-                                <xs:attribute name="type" />
-                                <xs:attribute name="coordinate" />
+                        <xs:element name="frame" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType mixed="true">
+                                <xs:sequence>
+                                    <xs:element name="sequence">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="w1" minOccurs="0"></xs:element>
+                                                <xs:element name="w2" minOccurs="0"></xs:element>
+                                                <xs:element name="w3" minOccurs="0"></xs:element>
+                                                <xs:element name="w4" minOccurs="0"></xs:element>
+                                                <xs:element name="w5" minOccurs="0"></xs:element>
+                                                <xs:element name="w6" minOccurs="0"></xs:element>
+                                                <xs:element name="w7" minOccurs="0"></xs:element>
+                                                <xs:element name="w8" minOccurs="0"></xs:element>
+                                                <xs:element name="w9" minOccurs="0"></xs:element>
+                                                <xs:element name="h1" minOccurs="0"></xs:element>
+                                                <xs:element name="h2" minOccurs="0"></xs:element>
+                                                <xs:element name="h3" minOccurs="0"></xs:element>
+                                                <xs:element name="h4" minOccurs="0"></xs:element>
+                                                <xs:element name="h5" minOccurs="0"></xs:element>
+                                                <xs:element name="h6" minOccurs="0"></xs:element>
+                                                <xs:element name="h7" minOccurs="0"></xs:element>
+                                                <xs:element name="h8" minOccurs="0"></xs:element>
+                                                <xs:element name="h9" minOccurs="0"></xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="dimmensions">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="w1" minOccurs="0"></xs:element>
+                                                <xs:element name="w2" minOccurs="0"></xs:element>
+                                                <xs:element name="w3" minOccurs="0"></xs:element>
+                                                <xs:element name="w4" minOccurs="0"></xs:element>
+                                                <xs:element name="w5" minOccurs="0"></xs:element>
+                                                <xs:element name="w6" minOccurs="0"></xs:element>
+                                                <xs:element name="w7" minOccurs="0"></xs:element>
+                                                <xs:element name="w8" minOccurs="0"></xs:element>
+                                                <xs:element name="w9" minOccurs="0"></xs:element>
+                                                <xs:element name="h1" minOccurs="0"></xs:element>
+                                                <xs:element name="h2" minOccurs="0"></xs:element>
+                                                <xs:element name="h3" minOccurs="0"></xs:element>
+                                                <xs:element name="h4" minOccurs="0"></xs:element>
+                                                <xs:element name="h5" minOccurs="0"></xs:element>
+                                                <xs:element name="h6" minOccurs="0"></xs:element>
+                                                <xs:element name="h7" minOccurs="0"></xs:element>
+                                                <xs:element name="h8" minOccurs="0"></xs:element>
+                                                <xs:element name="h9" minOccurs="0"></xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="material">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="w1" minOccurs="0"></xs:element>
+                                                <xs:element name="w2" minOccurs="0"></xs:element>
+                                                <xs:element name="w3" minOccurs="0"></xs:element>
+                                                <xs:element name="w4" minOccurs="0"></xs:element>
+                                                <xs:element name="w5" minOccurs="0"></xs:element>
+                                                <xs:element name="w6" minOccurs="0"></xs:element>
+                                                <xs:element name="w7" minOccurs="0"></xs:element>
+                                                <xs:element name="w8" minOccurs="0"></xs:element>
+                                                <xs:element name="w9" minOccurs="0"></xs:element>
+                                                <xs:element name="h1" minOccurs="0"></xs:element>
+                                                <xs:element name="h2" minOccurs="0"></xs:element>
+                                                <xs:element name="h3" minOccurs="0"></xs:element>
+                                                <xs:element name="h4" minOccurs="0"></xs:element>
+                                                <xs:element name="h5" minOccurs="0"></xs:element>
+                                                <xs:element name="h6" minOccurs="0"></xs:element>
+                                                <xs:element name="h7" minOccurs="0"></xs:element>
+                                                <xs:element name="h8" minOccurs="0"></xs:element>
+                                                <xs:element name="h9" minOccurs="0"></xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="no" type="xs:integer"/>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
@@ -72,7 +164,7 @@
                 <xs:element name="order" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="additionalInfo" maxOccurs="unbounded">
+                            <xs:element name="additionalInfo" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType mixed="true">
                                     <xs:attribute name="type" type="xs:integer" use="required" />
                                     <xs:attribute name="comment" type="xs:string" />
