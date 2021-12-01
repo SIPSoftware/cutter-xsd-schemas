@@ -1,12 +1,9 @@
-# Witamy na stronie dokumentacji szablonów XSD używanych w systemie CUTTER
+# Szablony XSD systemu CUTTER
 
-Dokumentacja podzielona jest na dwie części
+Dokumentacja szablonów XSD wykorzystywanych w systemie CUTTER. Ze względu na różne wersje aplikacji dokumentacja jest podzielona na dwie części:
 
-## PILK Cutter
+* Wersja [PILK](pilk/index.md)
+* Wersja [CUTTER](cutter/index.md)
+* Agata
 
-* `COIF` - Cutter Order Import File
 
-## CUTTER
-
-* `COIF` - Cutter Order Import File
-* Production orders
